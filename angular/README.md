@@ -29,12 +29,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Comandos
 Com esse comando ele já importa direto no NgModule
-Criar diretivas ~ng g d directives/marca marcaTexto ~
+Criar diretivas `ng g d directives/marca marcaTexto`
 
-Criar serviço:
+#### Criar serviço:
 
-~ng g service shared/services/people
+`ng g service shared/services/people`
 
 
 Criar Component List:
-~ng g component shared/components/listPeople~
+`ng g component shared/components/listPeople`
