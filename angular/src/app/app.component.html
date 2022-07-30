@@ -1,0 +1,86 @@
+<h1 class="text-success text-center">Live Angular Diretivas</h1>
+
+<div [ngStyle]="{background: count < 5 ? 'red' : 'green'}"
+     [ngClass]="{custom: count > 5}"
+     ><!--diretiva ngStyle/se o count for > 5 red, se não, verde-->
+     <!--diretiva ngClass/se o count for > 5 muda o style do css-->
+  <h2 class="text-center">Contador: {{count}} </h2>
+<!-- a chamada do {{ count }} do app.component.ts, implementa lógica do código -->
+</div>
+
+<!--DIRETIVA Ngstyle, que altera alguma propriedade do css-->
+<!--DIRETIVA NgClass, que altera a estrutura do projeto-->
+
+<!--Diretiva estrutural, se o contador  passar de 7 o h2 apareçe-->
+<h2 *ngIf="count >7;else menor">O contator passou de  7!</h2>
+
+<ng-template #menor>
+<h2> O contador é menor que 7</h2> <!--para inserir o else, inserimos um apelido "menor" como parâmetro-->
+</ng-template>
+
+
+<!--Diretiva NgSwith, interage com o count-->
+
+<ul [ngSwitch]="count" class="list-group mx-auto col-3">
+  <li
+  class="list-group-item"
+  *ngSwitchCase="3"
+  >
+  É IGUAL A 3
+</li>
+<li
+class="list-group-item"
+*ngSwitchCase="5"
+>
+É IGUAL A 5
+</li>
+<li
+class="list-group-item"
+*ngSwitchCase="8"
+>
+É IGUAL A 8
+</li>
+<li
+class="list-group-item"
+*ngSwitchDefault=""
+>
+ESSE É O DEFAULT
+</li>
+
+</ul>
+<!---Utiliando o *ngFor, que vai pegar uma pessoa do meu component.ts e mostrar pessoas : nome e sobrenome-->
+<ul class="list-group mx-auto my-3 col-3">
+  <li
+  class="list-group-item"
+  *ngFor="let pessoa of pessoas"
+  >
+  o nome da pessoa é {{pessoa.nome}} {{pessoa.sobrenome}}.
+</li>
+</ul>
+
+<h2> {{ nome }}</h2> <!---Databinding direcional da lógica(component.ts) para o template-->
+<!---Databinding direcional se eu quiser mandar apenas valor mando dentro de {{}}, se for propriedade []-->
+
+
+
+<!---"3" SE EU QUISER MANDAR UM VALOR -E- CHAMAR  UMA FUNÇÃO DO MEU COMPONENT.TS-->
+<!---"3" Entre parenteses chamdo meu método click com o método lá do component CLICOU-->
+<button class="btn btn-success" (click)="clicou('nome de quem clicou ex: CLeyson ou pessoa logada')">Clique</button>
+
+
+<!---"4" SE EU QUISER FAZER UM TWO-WAY-DATABINDING?--->
+<!---Quando eu quiser fazer uma operação de:
+digitar algo em formulário, alterar uma variável que está na lógica
+E Exibo resultado na minha view app.component.html  -->
+<!---Como o ngModel é bidirecional ele fica dentro de colchetes e parenteses-->
+<div class="col-4 mx-auto">
+<input
+type="text" class="form-control"
+placeholder="digite alguma coisa"
+[(ngModel)]="text"
+>
+<!---lembrar de importar o FormModule no app.module.ts-->
+<h4>Saída: {{ text }} </h4>
+</div>
+
+<!---AQUI PODE SER UTILIZADO PARA MOSTRAR A SENHA DIGITADA-->
