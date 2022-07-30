@@ -58,15 +58,16 @@ ESSE É O DEFAULT
 </li>
 </ul>
 
-<h2> {{ nome }}</h2> <!---Databinding direcional da lógica(component.ts) para o template-->
+
+
+<div class="col-4 mx-auto my-3">
+<h2 spaMarcaTexto> {{ nome }}</h2> <!---Databinding direcional da lógica(component.ts) para o template-->
 <!---Databinding direcional se eu quiser mandar apenas valor mando dentro de {{}}, se for propriedade []-->
-
-
 
 <!---"3" SE EU QUISER MANDAR UM VALOR -E- CHAMAR  UMA FUNÇÃO DO MEU COMPONENT.TS-->
 <!---"3" Entre parenteses chamdo meu método click com o método lá do component CLICOU-->
 <button class="btn btn-success" (click)="clicou('nome de quem clicou ex: CLeyson ou pessoa logada')">Clique</button>
-
+</div>
 
 <!---"4" SE EU QUISER FAZER UM TWO-WAY-DATABINDING?--->
 <!---Quando eu quiser fazer uma operação de:
