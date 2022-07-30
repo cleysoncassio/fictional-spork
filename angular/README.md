@@ -36,5 +36,5 @@ Criar diretivas `ng g d directives/marca marcaTexto`
 `ng g service shared/services/people`
 
 
-Criar Component List:
+#### Criar Component List:
 `ng g component shared/components/listPeople`
