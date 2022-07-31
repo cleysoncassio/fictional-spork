@@ -38,3 +38,11 @@ Criar diretivas `ng g d directives/marca marcaTexto`
 
 #### Criar Component List:
 `ng g component shared/components/listPeople`
+
+### Criar listagem de personagens Rick and Morty
+
+`ng g component components/list-api`
+
+### Criar serviço para  listagem de personagens Rick and Morty
+
+`ng g service shared/services/list`
